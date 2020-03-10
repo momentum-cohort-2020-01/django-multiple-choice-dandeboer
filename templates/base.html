@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block meta %}{% endblock meta %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards</title>
+    <title>{% block title %}Flashcards{% endblock title %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'script.js' %}" defer></script>
 </head>
 <body>
     {% block content %}{% endblock content %}
