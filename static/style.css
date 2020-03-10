@@ -4,3 +4,18 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+.login-logout {
+    float: right;
+    display: inline;
+}
+
+.flashcard-button {
+    border: solid 2px;
+    width: 150px;
+    height: 150px;
+}
+
+.header {
+    background-color: red;
+}
