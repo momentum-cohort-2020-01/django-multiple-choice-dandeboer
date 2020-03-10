@@ -12,5 +12,11 @@
 </header>
 <main>
     <button class="flashcard-button">Add a flashcard</button>
+    {% for deck in decks %}
+    <div class="deck">
+        <p>{{deck.title}}</p>
+        <p>{{deck.description}}</p>
+    </div>
+    {% endfor %}
 </main>
 {% endblock content %}

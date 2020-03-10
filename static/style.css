@@ -24,6 +24,11 @@
     height: 150px;
 }
 
+.deck {
+    border: solid 2px;
+    margin: 5px;
+}
+
 .header {
     background-color: lightblue;
 }
