@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
 <header class="header">
+
     <div class="title">
         <h1>Flashcards</h1>
     </div>
+
     <div class="login-logout-div">
         <p class="login-logout"><a  href="http://127.0.0.1:8000/accounts/logout/">logout</a></p>
         <p class="login-logout"><a href="http://127.0.0.1:8000/accounts/login/">login</a></p>
         <p class="login-logout"><a href="http://127.0.0.1:8000/accounts/register/">register</a></p>
     </div>
+
 </header>
 <main>
 
     <div class="deck-button" id="deck-button">
-        <p id="button-innards">Add a Deck</p>
-        
-
+        <p>Add a Deck</p>
     </div>
-    
+
+    <div class="deck-button" id="deck-button">
+        <form id="deck-button-form">
+            <p>Deck Title
+                <input id="deck-title" type="text">
+            </p>
+            <p>Deck Description
+                <input id="deck-description" type="text">
+            </p>
+            <button type="submit">Create Deck</button>
+        </form>
+    </div>
 
     {% for deck in decks %}
     <div class="deck">
@@ -25,5 +37,8 @@
         <p>{{deck.description}}</p>
     </div>
     {% endfor %}
+
+    <a href="http://127.0.0.1:8000/deck/add/">Test add deck</a>
+
 </main>
 {% endblock content %}
