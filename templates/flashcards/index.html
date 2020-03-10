@@ -11,7 +11,14 @@
     </div>
 </header>
 <main>
-    <button class="flashcard-button">Add a flashcard</button>
+
+    <div class="deck-button" id="deck-button">
+        <p id="button-innards">Add a Deck</p>
+        
+
+    </div>
+    
+
     {% for deck in decks %}
     <div class="deck">
         <p>{{deck.title}}</p>

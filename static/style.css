@@ -18,10 +18,10 @@
     display: inline-block;
 }
 
-.flashcard-button {
+.deck-button {
     border: solid 2px;
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 200px;
 }
 
 .deck {
@@ -31,4 +31,9 @@
 
 .header {
     background-color: lightblue;
+    width: 100%;
+}
+
+.color {
+    color: blue;
 }
