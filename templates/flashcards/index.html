@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <header class="header">
-    <h1>Flashcards</h1>
-    <p><a class="login-logout" href="#">login/logout</a></p>
+    <div class="title">
+        <h1>Flashcards</h1>
+    </div>
+    <div class="login-logout-div">
+        <p class="login-logout"><a  href="http://127.0.0.1:8000/accounts/logout/">logout</a></p>
+        <p class="login-logout"><a href="http://127.0.0.1:8000/accounts/login/">login</a></p>
+        <p class="login-logout"><a href="http://127.0.0.1:8000/accounts/register/">register</a></p>
+    </div>
 </header>
 <main>
     <button class="flashcard-button">Add a flashcard</button>

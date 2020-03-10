@@ -5,9 +5,17 @@
     font-family: sans-serif;
 }
 
+.title {
+    display: flexbox;
+}
+
+.login-logout-div {
+    display: flexbox;
+    text-align: right;
+}
+
 .login-logout {
-    float: right;
-    display: inline;
+    display: inline-block;
 }
 
 .flashcard-button {
@@ -17,5 +25,5 @@
 }
 
 .header {
-    background-color: red;
+    background-color: lightblue;
 }
