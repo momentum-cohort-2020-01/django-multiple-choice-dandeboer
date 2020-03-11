@@ -1,16 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block meta %} <script src="{% static 'javascript/script.js' %}" defer></script> {% endblock meta %}
 {% block content %}
 <header class="header">
+
     <div class="title">
         <h1>Flashcards</h1>
     </div>
+
     <div class="login-logout-div">
         <p class="login-logout"><a  href="http://127.0.0.1:8000/accounts/logout/">logout</a></p>
         <p class="login-logout"><a href="http://127.0.0.1:8000/accounts/login/">login</a></p>
         <p class="login-logout"><a href="http://127.0.0.1:8000/accounts/register/">register</a></p>
     </div>
+
 </header>
 <main>
-    <button class="flashcard-button">Add a flashcard</button>
+
+    <div class="deck-button" id="deck-button">
+        <p>Add a Deck</p>
+    </div>
+
+    {% for deck in decks %}
+    <div class="deck">
+        <h3>{{deck.title}}</h3>
+        <p>{{deck.description}}</p>
+    </div>
+    {% endfor %}
+
 </main>
 {% endblock content %}
