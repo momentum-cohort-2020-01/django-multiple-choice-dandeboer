@@ -6,7 +6,8 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    decks = Deck.objects.all()
+    decks = request.user.decks.all()
+    
     return render(request, 'flashcards/index.html', {'decks': decks})
 
 @login_required
