@@ -3,11 +3,13 @@ from .models import Deck, Card
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     decks = Deck.objects.all()
     return render(request, 'flashcards/index.html', {'decks': decks})
 
+@login_required
 def deck_page(request):
     return render(request, 'flashcards/deck-page.html')
 
