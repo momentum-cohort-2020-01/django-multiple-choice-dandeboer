@@ -7,7 +7,8 @@ urlpatterns = [
     path('', views.home),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('deck/add/', views.add_deck)
+    path('deck/', views.deck_page),
+    path('deck/add/', views.add_deck),
 ]
 
 if settings.DEBUG:

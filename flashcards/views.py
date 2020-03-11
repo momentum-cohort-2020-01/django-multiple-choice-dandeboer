@@ -8,6 +8,9 @@ def home(request):
     decks = Deck.objects.all()
     return render(request, 'flashcards/index.html', {'decks': decks})
 
+def deck_page(request):
+    return render(request, 'flashcards/deck-page.html')
+
 @csrf_exempt
 def add_deck(request):
     if request.method == 'POST':

@@ -1,14 +1,4 @@
-let deckButton = document.querySelector("#deck-button")
 let deckButtonForm = document.querySelector("#deck-button-form")
-
-deckButton.addEventListener('click', createDeck)
-
-//add form to submit ajax to the database
-//after submission add innerhtml again and eventlistener
-function createDeck() {
-    deckButton.removeEventListener('click', createDeck)
-    deckButton.innerHTML = "<p>Hello</p>"
-}
 
 deckButtonForm.addEventListener('submit', e => {
     e.preventDefault()
