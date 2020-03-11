@@ -19,6 +19,6 @@ def add_deck(request):
         data = json.loads(request.body.decode("utf-8"))
         title = data.get('title')
         description = data.get('description')
-        new_deck = Deck.objects.get_or_create(title=title, description=description)
+        new_deck = request.user.decks.get_or_create(title=title, description=description)
         print(new_deck)
     return JsonResponse({'status': 'ok'})
