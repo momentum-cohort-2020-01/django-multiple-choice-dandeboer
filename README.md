@@ -26,6 +26,10 @@ cp <your_project_name>/.env.sample <your_project_name>/.env
 
 Remember to change `<your_project_name>` to your actual project name. We remove `Pipfile` and `Pipfile.lock` at the beginning because django-admin will not overwrite them with the new ones from our template.
 
+
+
+
+
 Multiple Choice Project
 This week, you will choose one of three projects to work on.
 
