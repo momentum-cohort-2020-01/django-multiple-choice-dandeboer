@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     decks = request.user.decks.all()
-    
     return render(request, 'flashcards/index.html', {'decks': decks})
 
 @login_required
