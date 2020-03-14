@@ -11,7 +11,8 @@ def home(request):
 
 @login_required
 def deck_page(request):
-    return render(request, 'flashcards/deck-page.html')
+    deck = request.user.decks.all()
+    return render(request, 'flashcards/deck-page.html', {'deck': deck})
 
 @csrf_exempt
 def add_deck(request):
@@ -20,5 +21,4 @@ def add_deck(request):
         title = data.get('title')
         description = data.get('description')
         new_deck = request.user.decks.get_or_create(title=title, description=description)
-        print(new_deck)
-    return JsonResponse({'status': 'ok'})
+        return JsonResponse({'title': title, 'description': description}, safe=False)

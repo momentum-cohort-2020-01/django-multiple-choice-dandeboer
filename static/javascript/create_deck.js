@@ -1,4 +1,5 @@
 let deckButtonForm = document.querySelector("#deck-button-form")
+let addCard = document.querySelector("#add-card")
 
 deckButtonForm.addEventListener('submit', e => {
     e.preventDefault()
@@ -11,5 +12,19 @@ deckButtonForm.addEventListener('submit', e => {
         headers: {'Content-type': 'application/json',},
         body: JSON.stringify(data)
     })
-    // .then((response) => response.json())
+    .then((response) => response.json())
+    .then(response => {
+        // console.log(response)
+        console.log("JsonResponse recieved")
+        createButton()
+
+    })
+    .catch((error) => {
+        console.error('JSON response ERROR')
+    })
 })
+
+function createButton() {
+    console.log("hi")
+
+}
