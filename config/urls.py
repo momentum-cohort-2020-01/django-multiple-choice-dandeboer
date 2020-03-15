@@ -9,6 +9,7 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('deck/', views.deck_page),
     path('deck/add/', views.add_deck),
+    path('deck/card/', views.add_card),
 ]
 
 if settings.DEBUG:

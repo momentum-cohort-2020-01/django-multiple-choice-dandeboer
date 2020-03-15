@@ -20,5 +20,17 @@ def add_deck(request):
         data = json.loads(request.body.decode("utf-8"))
         title = data.get('title')
         description = data.get('description')
-        new_deck = request.user.decks.get_or_create(title=title, description=description)
-        return JsonResponse({'title': title, 'description': description}, safe=False)
+        new_deck, created = request.user.decks.get_or_create(title=title, description=description)
+        return JsonResponse({'pk': new_deck.pk, 'title': title, 'description': description}, safe=False)
+
+@csrf_exempt
+def add_card(request):
+    if request.method == "POST":
+        data = json.loads(request.body.decode("utf-8"))
+        question = data.get('question')
+        answer = data.get("answer")
+        deck_pk = data.get("pk")
+        current_deck = Deck.objects.get(pk=deck_pk)
+        new_card = current_deck.cards.create(question=question, answer=answer)
+        return JsonResponse({'question': question, 'answer': answer, 'current-deck': current_deck.cards}, safe=False)
+
