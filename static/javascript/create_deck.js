@@ -1,5 +1,6 @@
 let deckButtonForm = document.querySelector("#deck-button-form")
 let addCard = document.querySelector("#add-card")
+let cardsDiv = document.querySelector("#cards-div")
 
 deckButtonForm.addEventListener('submit', e => {
     e.preventDefault()
@@ -25,7 +26,6 @@ deckButtonForm.addEventListener('submit', e => {
 })
 
 function createButton() {
-    console.log("hi")
     addCard.classList.remove("hidden")
     addCard.setAttribute("class", "add-button")
     let cardButton = document.querySelector("#add-card-button")
@@ -47,8 +47,22 @@ addCard.addEventListener('submit', e => {
     .then(response => {
         console.log('Other JsonResponse recieved')
         console.log(response)
+        displayNewCard(response)
+        questionInput.value = ""
+        answerInput.value = ""
     })
-    .catch((error) => {
-        console.error('Other JSON response ERROR')
-    })
+    // .catch((error) => {
+    //     console.error('Other JSON response ERROR')
+    // })
 })
+
+function displayNewCard(cardData) {
+    let div = document.createElement("div")
+    div.setAttribute("class", "deck")
+    cardsDiv.insertBefore(div, document.querySelector(".deck"))
+    let stuff = "<div><p>question: " + cardData.question + "</p><p>answer: " + cardData.answer + "</p></div>"
+    console.log(stuff)
+    let cardDiv = document.querySelector(".deck")
+    cardDiv.innerHTML = stuff
+    console.log(stuff)
+}
