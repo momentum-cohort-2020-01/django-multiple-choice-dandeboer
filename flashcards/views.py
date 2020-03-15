@@ -31,6 +31,7 @@ def add_card(request):
         answer = data.get("answer")
         deck_pk = data.get("pk")
         current_deck = Deck.objects.get(pk=deck_pk)
-        new_card = current_deck.cards.create(question=question, answer=answer)
-        return JsonResponse({'question': question, 'answer': answer, 'current-deck': current_deck.cards}, safe=False)
+        card = Card(question=question, answer=answer, deck=current_deck)
+        card.save()
+        return JsonResponse({'question': question, 'answer': answer, 'current-deck': current_deck.title,}, safe=False)
 
