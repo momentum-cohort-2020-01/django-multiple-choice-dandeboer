@@ -18,7 +18,7 @@
     display: inline-block;
 }
 
-.deck-button {
+.add-button {
     border: solid 2px;
     width: 350px;
     height: 200px;
@@ -39,6 +39,6 @@
     border-bottom: solid 2px;
 }
 
-.color {
-    color: blue;
+.hidden {
+    visibility: hidden;
 }
